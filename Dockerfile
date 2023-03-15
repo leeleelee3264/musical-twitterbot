@@ -17,8 +17,17 @@ RUN apk update
 RUN apk add --update apk-cron && rm -rf /var/cache/apk/*
 RUN apk add --no-cache bash
 RUN apk add --no-cache tzdata
+RUN apk add --no-cache wget
 
+# set timezone
 ENV TZ="Asia/Seoul"
+
+# install chromedriver for selenium
+RUN mkdir /home/dev
+RUN wget https://chromedriver.storage.googleapis.com/104.0.5112.79/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN mv chromedriver /home/dev
+RUN chmod +x /home/dev/chromedriver
 
 # Add the cron job
 RUN crontab -l | { cat; echo "0 12 * * * bash /app/cast_bot.sh"; } | crontab -
