@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /opt/twitter_project
+cd /root/twitter_project
 
 source twitter/bin/activate
 

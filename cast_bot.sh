@@ -1,7 +1,7 @@
 #! /bin/bash
 # add comment to test user ipad has sudo permission
 
-cd /opt/twitter_project
+cd /root/twitter_project
 
 source twitter/bin/activate
 
