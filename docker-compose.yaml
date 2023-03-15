@@ -3,8 +3,4 @@ services:
   application:
     container_name: python-musical-bot
     build: .
-    environment:
-      TZ: "Asia/Seoul"
-    volumes:
-      - /Users/seungmin/study/project/musical-twitterbot:/root/musical-twitterbot
     restart: always

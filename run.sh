@@ -1,9 +1,4 @@
 #! /bin/bash
 
-cd /root/twitter_project
-
-source twitter/bin/activate
-
+cd /app
 python3 crawl/musical.py
-
-deactivate
