@@ -4,3 +4,12 @@ services:
     container_name: python-musical-bot
     build: .
     restart: always
+  mysql: 
+    image: mysql:5.7 
+    volumes: 
+     - ./data:/var/lib/mysql
+    ports: 
+     - "3306:3306" 
+    environment: 
+     MYSQL_ROOT_PASSWORD: 1234 
+     MYSQL_DATABASE: log
