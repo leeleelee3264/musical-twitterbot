@@ -1,9 +1,12 @@
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' IDENTIFIED BY 'password';
+
 use log; 
 
 create table musical
 (
     id         		 int  	       not null auto_increment primary key,
     interpark_id 	 varchar(255)  not null,
+    interpark_path       varchar(255)  not null, 
     name	         varchar(255)  not null,
     place                varchar(255)  null,
     cast		 varchar(255)  not null, 

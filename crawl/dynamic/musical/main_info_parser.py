@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 
 import sys 
 
-sys.path.append('/opt/twitter_project')
 
 import actor as actor
 from crawl.db.exe_query import *

@@ -5,7 +5,7 @@ _window = 'nt'
 _linux = 'posix'
 
 _dirver_path='C:\\src\\selenium\\chromedriver.exe'
-_dirver_path_linux='/home/dev/chromedriver'
+_dirver_path_linux='/usr/bin/chromedriver'
 
 
 def get_driver(headless=True):
@@ -34,7 +34,8 @@ def headless_option():
     options.add_argument("--window-size=1920,1080");
     options.add_argument("--start-maximized");
     options.add_argument("--headless");
-
+    options.add_argument("--no-sandbox"); 
+    options.add_argument("--disable-dev-shm-usage"); 
     return options
 
 
