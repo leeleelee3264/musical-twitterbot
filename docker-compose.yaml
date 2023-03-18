@@ -5,12 +5,19 @@ services:
     build: .
     restart: always
   mysql: 
-    image: mysql:5.7 
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --explicit_defaults_for_timestamp=1
+    image: mysql:5.7.28 
     volumes: 
-     - ./db/mysql/data:/var/lib/mysql
-     - ./db/mysql/init:/docker-entrypoint-initdb.d
+     - ./db_data:/var/lib/mysql
+     - ./db/mysql:/docker-entrypoint-initdb.d
     ports: 
      - 3306:3306
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER} 
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+volumes: 
+  db_data: 

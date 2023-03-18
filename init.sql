@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS log;
+USE log; 
 CREATE TABLE musical (
   id INT PRIMARY KEY,
   interpark_id VARCHAR(255),
