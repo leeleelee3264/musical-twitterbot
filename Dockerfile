@@ -1,35 +1,24 @@
-FROM alpine:latest
+FROM selenium/standalone-chrome
 
+USER root
 WORKDIR /app
 
 COPY . /app
 
-# Give execution rights on the cron scripts
-RUN chmod +x /app/cast_bot.sh
-RUN chmod +x /app/log.sh
-RUN chmod +x /app/run.sh
-
 #Install Cron
-RUN apk update && \
-    apk add python3 py3-pip && \
+RUN apt-get update -y 
+RUN apt-get install -y python3 python3-pip bash tzdata wget cron && \
     pip3 install virtualenv
 
 
 RUN virtualenv venv && \
-    source venv/bin/activate && \
-    pip install --no-cache-dir -r requirements.txt
-
-RUN apk add --update apk-cron && rm -rf /var/cache/apk/*
-RUN apk add --no-cache bash
-RUN apk add --no-cache tzdata
-RUN apk add --no-cache wget
+    . venv/bin/activate && \
+    pip install --no-cache-dir -r requirements.txt && \
+    deactivate
 
 # set timezone
 ENV TZ="Asia/Seoul"
 
-# install chromedriver for selenium
-RUN apk add chromium 
-RUN apk add chromium-chromedriver
 # Add the cron job
 RUN crontab -l | { cat; echo "0 12 * * * bash /app/cast_bot.sh"; } | crontab -
 RUN crontab -l | { cat; echo "0 0 * * * bash /app/log.sh"; } | crontab -
@@ -39,6 +28,6 @@ RUN crontab -l | { cat; echo "00 12 * * 6 bash /app/run.sh"; } | crontab -
 
 
 # Run the command on container startup
-CMD ["crond", "-f"]
+CMD ["cron", "-f"]
 
 
