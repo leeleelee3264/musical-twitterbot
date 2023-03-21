@@ -10,11 +10,11 @@ create table musical
     name	         varchar(255)  not null,
     place                varchar(255)  null,
     cast		 varchar(255)  not null, 
-    start_time           date	       not null, 
-    end_time             date	       not null, 
+    start_date           date	       not null, 
+    end_date             date	       not null, 
     poster_path          varchar(255)  not null, 
     create_date          datetime      default current_timestamp 
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
 create table schedule
 (
     id                   int           not null auto_increment primary key,
@@ -22,7 +22,7 @@ create table schedule
     date                 varchar(255)  not null, 
     time                 varchar(255)  not null, 
     create_date          datetime      default current_timestamp
-); 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
 create table casting
 (
     id                   int           not null auto_increment primary key,
@@ -31,4 +31,4 @@ create table casting
     time                 varchar(255)  not null, 
     cast                 varchar(255)  not null, 
     create_date          datetime      default current_timestamp
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;

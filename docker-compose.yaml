@@ -8,7 +8,6 @@ services:
      - mysql
     shm_size: '3gb'
   mysql: 
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     command: --explicit_defaults_for_timestamp=1
     image: mysql:5.7.28 
     volumes: 
