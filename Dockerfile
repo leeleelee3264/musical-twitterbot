@@ -20,11 +20,11 @@ RUN virtualenv venv && \
 ENV TZ="Asia/Seoul"
 
 # Add the cron job
-RUN crontab -l | { cat; echo "0 12 * * * bash /app/cast_bot.sh"; } | crontab -
-RUN crontab -l | { cat; echo "0 0 * * * bash /app/log.sh"; } | crontab -
+RUN crontab -l | { cat; echo "0 12 * * * /app/cast_bot.sh >> /var/log/cron.log 2>&1"; } | crontab -
+RUN crontab -l | { cat; echo "0 0 * * * /app/log.sh >> /var/log/cron.log 2>&1"; } | crontab -
 
-RUN crontab -l | { cat; echo "00 12 * * 3 bash /app/run.sh"; } | crontab -
-RUN crontab -l | { cat; echo "00 12 * * 6 bash /app/run.sh"; } | crontab -
+RUN crontab -l | { cat; echo "00 12 * * 3 /app/run.sh >> /var/log/cron.log 2>&1"; } | crontab -
+RUN crontab -l | { cat; echo "00 12 * * 6 /app/run.sh >> /var/log/cron.log 2>&1"; } | crontab -
 
 
 # Run the command on container startup

@@ -75,7 +75,7 @@ def get_schedule_for_twitter():
     query = " SELECT c.time, c.cast, m.name, m.place, m.poster_path " + \
             " FROM " + TABLE.CASTING + " c" + \
             " INNER JOIN " + TABLE.MUSICAL + " m ON m.id = c.musical_id" + \
-            " WHERE c.date = " + today_cast
+            " WHERE c.date = " + "\"" + today_cast + "\""
     try:
         cursor.execute(query)
         rst = cursor.fetchall()

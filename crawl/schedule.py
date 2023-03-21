@@ -4,7 +4,6 @@ import os
 import sys
 
 import requests
-from PIL import Image
 from tweepy import TweepError
 
 from crawl import imageTweetTest

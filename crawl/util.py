@@ -8,7 +8,7 @@ import datetime
 
 import requests
 
-DATE_FORMAT = '%Y%m%d'
+DATE_FORMAT = '%Y-%m-%d'
 
 
 def _create_folder(fullPath):
