@@ -6,6 +6,20 @@ I made two twitter bots.
 [2] [지금 공연중인 뮤지컬 알림봇](https://twitter.com/now_performKr)    
 
 
+## Update 2023-0507
+
+트위터의 API 유료화 정책으로 인해 두 봇의 운영을 종료했다.
+오늘의 뮤지컬 스케쥴은 2021년 10월 부터, 지금 공연중인 뮤지컬 알림봇은 2021년 5월 부터 운영을 했다. 
+2년 동안 유지보수를 한 봇들의 운영을 종료하게 되어 아쉽고, 추후에 다시 운영할 방안을 고민할 예정이다. 
+
+<br>
+
+![스크린샷 2023-05-07 오후 9 32 11](https://user-images.githubusercontent.com/35620531/236677754-0ce5ded8-066f-432c-8460-a18f5584cf0f.png)
+
+
+![스크린샷 2023-05-07 오후 9 32 31](https://user-images.githubusercontent.com/35620531/236677771-2c04baa7-ef49-41ff-9824-55c507614706.png)
+
+
 
 <br>
 
